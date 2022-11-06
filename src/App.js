@@ -17,7 +17,7 @@ function App() {
             return
         }
         try {
-            const backend_url = "http://localhost:3000/api/create";
+            const backend_url = "http://localhost:8000/api/create";
 
             const response = await fetch(backend_url, {
                 method: 'POST',
