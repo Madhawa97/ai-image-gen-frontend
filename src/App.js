@@ -6,7 +6,7 @@ function App() {
 
     const [prompt, setPrompt] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [err, setErr] = useState('');
+    const [error, setError] = useState('');
     const [data, setData] = useState();
     
     const getImage = async (e) => {
@@ -43,8 +43,8 @@ function App() {
             setData(result);
         
         } catch (err) {
-            console.log(err.message);
-            setErr(err.message);
+            setError(err.message);
+            console.log(error);
         } finally {
             console.log("Set isLoading false");
             setIsLoading(false);
@@ -66,7 +66,7 @@ function App() {
             {data && (
                 <div>
                     
-                    <img className='Image' src={data.url} />
+                    <img className='Image' src={data.url} alt={prompt}/>
                 </div>
             )}
         </div>
